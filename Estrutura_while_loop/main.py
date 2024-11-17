@@ -1,8 +1,17 @@
 #while
 
-contador = 1
+senha_correta = "python123"
+tentativa = ''
 
-while contador <= 5:
-    print(contador)
-    contador =+ 1 
+print("Bem-vindo! Por Favor, digite sua senha. ")
+
+#verificação e loop de repetição 
+
+while tentativa != senha_correta:
+    tentativa = input("Digite a senha: ")
+    if tentativa != senha_correta:
+        print("Senha incorreta. Tente novamente.")
+
+print("Senha correta! Acesso permitido.")
+
 
