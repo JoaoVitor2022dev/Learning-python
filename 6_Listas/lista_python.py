@@ -1,5 +1,4 @@
 # listas 
-
 frutas =[]
 
 while True:
