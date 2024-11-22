@@ -41,7 +41,7 @@ try:
         linhas = arquivo.readlines()
         encontrou = False
         for linha in linhas:
-            num_cartao, livros = linha.strip().strip(',',1)
+            num_cartao, livros = linha.strip().split(',',1)
             if int(num_cartao) == numero_cartao:
                 print(f"Livros pegados: {livros}")
                 encontrou = True
