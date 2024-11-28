@@ -10,8 +10,6 @@ import requests
 response = requests.get("https://joaovitor2022dev.github.io/")
 
 print(response.text)
-
-
 # data e horas 
 
 import datetime
