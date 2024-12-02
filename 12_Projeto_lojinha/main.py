@@ -36,3 +36,6 @@ def ler_arquivo_de_dados(nome_arquivo):
             return arquivo.readlines()
     except FileNotFoundError:
         return []    
+    
+
+    
