@@ -21,21 +21,38 @@ class Agenda:
 ## Entrada de dados 
 
 def main():
+    ## criação do objeto agenda
     agenda = Agenda()
 
     while True:
+        print("")
         print("1. Adicionar Contato")
         print("2. Listar Contato")
-        print("3. Sair")
+        print("3. Sair\n")
         escolha = int(input("Escolha uma opção: ")) 
 
-        if escolha == '1': 
+        if escolha == 1: 
             nome =      input("Nome: ")
             telefone =  input("Telefone: ")
             email =     input("E-mail: ")
-            
+
             contato = Contato(nome,telefone,email)
-            
+
             agenda.adicionar_contato(contato) 
 
             print("Contato registrado com sucesso!") 
+        elif escolha == 2:
+            print("\nLista de Contatos:")
+            agenda.listar_contatos()
+        elif escolha == 3:
+            print("Saindo...")
+            break
+        else:
+           print("Opção inválida. Tente novamente.")
+
+if __name__ == "__main__":
+    main()
+
+
+ 
+
