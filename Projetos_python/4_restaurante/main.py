@@ -48,6 +48,49 @@ class Restaurante:
         return Pedido()
 
 
+## FRONT END 
+
+def main():
+    restaurante = Restaurante()
+ 
+    #Adicionar produtos ao menu 
+    restaurante.AdicionarProdutoMenu(Produto("Hanburguer", 15.50))
+    restaurante.AdicionarProdutoMenu(Produto("Pizza", 90.50))
+    restaurante.AdicionarProdutoMenu(Produto("Refrigerante", 5.50))
+    restaurante.AdicionarProdutoMenu(Produto("Suco", 9.0))
+
+    pedido = restaurante.CriarPedido()
+     
+    while True:
+        print("\n1. Mostrar Menu") 
+        print("2. Adicionar Produto ao pedido") 
+        print("3. Mostrar pedido e total") 
+        print("4. Sair") 
+        escolha = input("Escolhe um opção: ")
+
+        if escolha == '1':
+            print("\nMenu:")
+            restaurante.listarMenu()
+        elif escolha == '2':
+            nome_produto = input("Digite o nome do produto que deseja adicionar ao pedido: ")
+            for produto in restaurante.menu:
+                if produto.nome.lower() == nome_produto.lower():
+                    pedido.AdicionarProdutos(produto)
+                    print(f"{produto.nome} adicionar ao pedido.") 
+                    break
+            else:
+                print("Produto não encontrado no menu")
+        elif escolha == "3":
+            print("\nResumo do pedido:")
+            print(pedido.MostrarInformacao())
+        elif escolha == '4':
+            print("Saindo...")
+            break
+        else:
+            print("Opção inválida. Tente novamente.")
+
+if __name__ == "__main__":
+    main()
 
 
-
+           
